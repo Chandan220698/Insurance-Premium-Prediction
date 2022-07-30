@@ -1,5 +1,4 @@
-# ML_Project_deployment
-## Start Machine Learning Project
+# Insurance Price Prediction
 
 ### Deployment Link:
 [Insurance Price Prediction](https://insurance-premium-pred-ck.herokuapp.com/)
