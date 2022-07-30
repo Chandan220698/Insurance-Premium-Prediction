@@ -16,7 +16,7 @@ class DataValidation:
                  data_validation_config:DataValidationConfig) -> None:
 
         try:
-            logging.info(f"{'='*30}Data Valdaition log started.{'='*30} \n")
+            logging.info(f"{'='*20}Data Valdaition log started.{'='*20} \n")
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_config = data_validation_config
         
@@ -68,7 +68,7 @@ class DataValidation:
             test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
 
             # reading column names from schema.yaml file
-            dict = read_yaml_file(file_path = r'C:\Users\harsh\Insurance-Premium-Prediction\config\schema.yaml')['columns']
+            dict = read_yaml_file(file_path = r'G:\Ineuron Data Science\Projects\Insurance-Premium-Prediction\config\schema.yaml')['columns']
             
             schema_file_columns = []
             for key in dict.keys():
@@ -82,8 +82,8 @@ class DataValidation:
                 logging.info(f"Training, Testing and schema.yaml file having same column name.")
                 
                 # checking values of "sex", "region" in schema.yaml file
-                sex_yaml_col_value = sorted(read_yaml_file(file_path = r'C:\Users\harsh\Insurance-Premium-Prediction\config\schema.yaml')['domain_value']['sex'])
-                region_yaml_col_value = sorted(read_yaml_file(file_path = r'C:\Users\harsh\Insurance-Premium-Prediction\config\schema.yaml')['domain_value']['region'])
+                sex_yaml_col_value = sorted(read_yaml_file(file_path = r'G:\Ineuron Data Science\Projects\Insurance-Premium-Prediction\config\schema.yaml')['domain_value']['sex'])
+                region_yaml_col_value = sorted(read_yaml_file(file_path = r'G:\Ineuron Data Science\Projects\Insurance-Premium-Prediction\config\schema.yaml')['domain_value']['region'])
 
                 #checking values of "sex", "region" in train and test file
                 sex_val_train_df = sorted(train_df["sex"].unique())

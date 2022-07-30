@@ -123,7 +123,7 @@ class DataTransformation:
 
             data_transformation_artifact = DataTransformationArtifact(
                     is_transformed = True,
-                    message = "Data transformation successfull.",
+                    message = "Data transformation successful.",
                     transformed_train_file_path = transformed_train_file_path,
                     transformed_test_file_path = transformed_test_file_path,
                     preprocessed_object_file_path = preprocessing_obj_file_path)

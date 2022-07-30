@@ -42,7 +42,7 @@ class ModelTrainer:
 
     def __init__(self, model_trainer_config:ModelTrainerConfig, data_transformation_artifact: DataTransformationArtifact):
         try:
-            logging.info(f"{'>>' * 30}Model trainer log started.{'<<' * 30} ")
+            logging.info(f"{'==' * 30}Model trainer log started.{'==' * 30} ")
             self.model_trainer_config = model_trainer_config
             self.data_transformation_artifact = data_transformation_artifact
         except Exception as e:
@@ -112,15 +112,4 @@ class ModelTrainer:
             raise PremiumException(e, sys) from e
 
     def __del__(self):
-        logging.info(f"{'>>' * 30}Model trainer log completed.{'<<' * 30} ")
-
-
-
-#loading transformed training and testing datset
-#reading model config file 
-#getting best model on training datset
-#evaludation models on both training & testing datset -->model object
-#loading preprocessing pbject
-#custom model object by combining both preprocessing obj and model obj
-#saving custom model object
-#return model_trainer_artifact
+        logging.info(f"{'==' * 20}Model trainer log completed.{'==' * 20} ")

@@ -33,7 +33,7 @@ class DataIngestion:
             logging.info(f"Downloading file from :[{download_url}] into :[{zip_file_path}]")
 
             urllib.request.urlretrieve(download_url, zip_file_path)
-            logging.info(f"File :[{zip_file_path}] has been downloaded successfully.")
+            logging.info(f"File :[{zip_file_path}] downloaded successfully.")
             
             return zip_file_path
         
@@ -60,7 +60,6 @@ class DataIngestion:
     def split_data_as_train_test(self) -> DataIngestionArtifact:
         try:
             raw_data_dir = self.data_ingestion_config.raw_data_dir
-            #file_name = "insurance"
             file_name = os.listdir(raw_data_dir)[0]
 
             premium_file_path = os.path.join(raw_data_dir, file_name)
@@ -115,7 +114,6 @@ class DataIngestion:
     def initiate_data_ingestion(self) -> DataIngestionArtifact:
         try:
             zip_file_path = self.download_premium_data()
-            #self.extract_tgz_file(tgz_file_path=tgz_file_path)
             self.extract_zip_file(zip_file_path=zip_file_path)
             return self.split_data_as_train_test()
 

@@ -81,7 +81,7 @@ def evaluate_regression_model(model_list: list, X_train:np.ndarray, y_train:np.n
         metric_info_artifact = None
         for model in model_list:
             model_name = str(model)  #getting model name based on model object
-            logging.info(f"{'>>'*30}Started evaluating model: [{type(model).__name__}] {'<<'*30}")
+            logging.info(f"{'=='*20}Started evaluating model: [{type(model).__name__}] {'=='*20}")
             
             #Getting prediction for training and testing dataset
             y_train_pred = model.predict(X_train)
@@ -100,11 +100,11 @@ def evaluate_regression_model(model_list: list, X_train:np.ndarray, y_train:np.n
             diff_test_train_acc = abs(test_acc - train_acc)
             
             #logging all important metric
-            logging.info(f"{'>>'*30} Score {'<<'*30}")
+            logging.info(f"{'=='*20} Score {'=='*20}")
             logging.info(f"Train Score\t\t Test Score\t\t Average Score")
             logging.info(f"{train_acc}\t\t {test_acc}\t\t{model_accuracy}")
 
-            logging.info(f"{'>>'*30} Loss {'<<'*30}")
+            logging.info(f"{'=='*20} Loss {'=='*20}")
             logging.info(f"Diff test train accuracy: [{diff_test_train_acc}].") 
             logging.info(f"Train root mean squared error: [{train_rmse}].")
             logging.info(f"Test root mean squared error: [{test_rmse}].")
@@ -220,10 +220,7 @@ class ModelFactory:
     @staticmethod
     def class_for_name(module_name:str, class_name:str):
         try:
-            # load the module, will raise ImportError if module cannot be loaded
             module = importlib.import_module(module_name)
-            
-            # get the class, will raise AttributeError if class cannot be found
             logging.info(f"Executing command: from {module} import {class_name}")
             class_ref = getattr(module, class_name)
 
@@ -259,12 +256,12 @@ class ModelFactory:
                                                                    self.grid_search_property_data)
 
             
-            message = f'{">>"* 30} f"Training {type(initialized_model.model).__name__} Started." {"<<"*30}'
+            message = f'{"=="* 20} f"Training {type(initialized_model.model).__name__} Started." {"=="*20}'
             logging.info(message)
 
             grid_search_cv.fit(input_feature, output_feature)
 
-            message = f'{">>"* 30} f"Training {type(initialized_model.model).__name__}" completed {"<<"*30}'
+            message = f'{"=="* 30} f"Training {type(initialized_model.model).__name__}" completed {"=="*30}'
             
             grid_searched_best_model = GridSearchedBestModel(
                                             model_serial_number = initialized_model.model_serial_number,

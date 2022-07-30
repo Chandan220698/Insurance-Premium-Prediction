@@ -32,9 +32,6 @@ class Configuration:
 
             dataset_download_url = data_ingestion_info[DATA_INGESTION_DOWNLOAD_URL_KEY]
 
-            #zip_download_dir = os.path.join(data_ingestion_artifact_dir, 
-            #                                data_ingestion_info[DATA_INGESTION_ZIP_DOWNLOAD_DIR_KEY])
-
             zip_download_dir = os.path.join(data_ingestion_artifact_dir,
                                             data_ingestion_info[DATA_INGESTION_ZIP_DOWNLOAD_DIR_KEY]      )
 

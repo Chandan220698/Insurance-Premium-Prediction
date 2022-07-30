@@ -9,7 +9,7 @@ class ModelPusher:
     def __init__(self, model_pusher_config:ModelPusherConfig,
                 model_evaluation_artifact:ModelEvaluationArtifact) -> None:
         try:
-            logging.info(f"{'=' * 30} Model Pusher log started. {'=' * 30} ")
+            logging.info(f"{'=' * 20} Model Pusher log started. {'=' * 20} ")
             self.model_pusher_config = model_pusher_config
             self.model_evaluation_artifact = model_evaluation_artifact
 
@@ -48,4 +48,4 @@ class ModelPusher:
             raise PremiumException(e, sys) from e
 
     def __del__(self):
-        logging.info(f"{'>>' * 20}Model Pusher log completed.{'<<' * 20} ")
+        logging.info(f"{'==' * 20}Model Pusher log completed.{'==' * 20} ")
